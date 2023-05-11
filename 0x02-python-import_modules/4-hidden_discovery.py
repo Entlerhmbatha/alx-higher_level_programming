@@ -1,16 +1,10 @@
 #!/usr/bin/python3
-import sys
 
-if __name__ != "__main__":
-    exit()
+if __name__ == "__main__":
+    """Print all names defined by hidden_4 module."""
+    import hidden_4
 
-argc = len(sys.argv) - 1
-
-i = 0
-result = 0
-for arg in sys.argv:
-    if i != 0:
-        result += int(arg)
-    else:
-        i += 1
-print("{:d}".format(result))
+    names = dir(hidden_4)
+    for name in names:
+        if name[:2] != "__":
+            print(name)
